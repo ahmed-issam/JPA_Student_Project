@@ -12,15 +12,20 @@ public class main {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            for (int i = 5; i <= 12; i++) {
-                DeptDataLayer dept1 = entityManager.find(DeptDataLayer.class, i);
-                entityManager.remove(dept1);
-                transaction.commit();
-            }
-
-        } catch (Exception e) {
+          DeptDataLayer mechanicalDept = entityManager.find(DeptDataLayer.class , 5);
+          entityManager.remove(mechanicalDept);
+            DeptDataLayer electricalDept =  entityManager.find(DeptDataLayer.class , 6);
+            entityManager.remove(electricalDept);
+            DeptDataLayer civilDept =  entityManager.find(DeptDataLayer.class , 7);
+            entityManager.remove(civilDept);
+            DeptDataLayer chemicalDept = entityManager.find(DeptDataLayer.class , 8);
+            entityManager.remove(chemicalDept);
+            transaction.commit();
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
+
 
 
     }
