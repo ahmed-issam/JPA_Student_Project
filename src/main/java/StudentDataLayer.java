@@ -1,7 +1,5 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
@@ -9,6 +7,7 @@ import javax.persistence.Table;
 public class StudentDataLayer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String full_name;
     private int grade;
@@ -16,8 +15,8 @@ public class StudentDataLayer {
     public StudentDataLayer() {
     }
 
-    public StudentDataLayer(Integer id, String full_name, int grade) {
-        this.id = id;
+    public StudentDataLayer( String full_name, int grade) {
+
         this.full_name = full_name;
         this.grade = grade;
     }

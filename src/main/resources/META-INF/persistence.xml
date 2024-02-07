@@ -4,13 +4,20 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="default">
-<class> StudentDataLayer</class>
+        <class>StudentDataLayer</class>
+        <class>DeptDataLayer</class>
 <properties>
+    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/issam"/>
     <property name="hibernate.connection.username" value="root"/>
+    <property name="hibernate.connection.password" value="369240"/>
     <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
     <property name="hibernate.show_sql" value="true"/>
-    <property name="hibernate.connection.password" value="369240"/>
-    <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/issam"/>
+
+    <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+<property name="javax.persistence.schema-generation.database.action" value="create"/>
+    <property name="persistence.sql-load-script-source
+" value="table-records.sql"/>
+
 
 
 
